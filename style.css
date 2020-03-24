@@ -6,13 +6,13 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 html {
   font-size: 62.5%;
   font-family: "Montserrat", sans-serif;
-}
-
-:focus {
-  outline: none;
 }
 
 :root {
@@ -25,10 +25,13 @@ html {
   --border-radius: 1rem;
 }
 
-.container {
-  height: 100vh;
-  width: 100%;
+body {
   background-color: var(--color-container);
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
 }
 
 .header {
@@ -68,6 +71,12 @@ html {
 
 .input:focus {
   border: 1px solid var(--color-white);
+}
+
+@media only screen and (max-width: 600px) {
+  .input {
+    padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  }
 }
 
 .submit {
@@ -122,13 +131,6 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.background::after {
-  content: "Good hob!";
-  display: block;
-  width: 10rem;
-  color: red;
 }
 
 .todo {
@@ -191,6 +193,7 @@ html {
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
+  transition: 0.2s ease;
 }
 
 .fa-check:hover {
